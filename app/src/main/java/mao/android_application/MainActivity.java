@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Map;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity
                 Map<String, Object> map = MainApplication.getInstance().map;
                 map.put("username", username);
                 map.put("password", password);
+                toastShow("写入成功");
             }
         });
 
@@ -46,5 +48,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+    }
+
+    /**
+     * 显示消息
+     *
+     * @param message 消息
+     */
+    private void toastShow(String message)
+    {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
